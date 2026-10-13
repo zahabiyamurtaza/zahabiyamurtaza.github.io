@@ -962,6 +962,11 @@ dialog.brand-dlg { width: min(1180px, calc(100vw - 32px)); }
 .ph-title { margin: 6px 0 0; font: 800 16px/1.2 var(--display); letter-spacing: -0.01em; color: var(--ink); }
 .ph-meta { margin: 0; font-size: 13px; color: var(--muted); }
 
+/* product photos */
+.dstage--photo { padding: 0; background: #d8c7b3; }
+.photo { margin: 0; }
+.photo img { display: block; width: 100%; height: auto; }
+.photo figcaption { padding: 10px 16px 12px; background: var(--paper); border-top: 2px solid var(--ink); font: 600 13px/1.35 var(--body); color: #5b5146; text-align: center; }
 /* bottles */
 .dstage--bottles { display: flex; justify-content: center; align-items: flex-end; gap: clamp(24px, 7vw, 90px); flex-wrap: wrap; padding-top: 40px; }
 .bottle { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -1000,9 +1005,10 @@ dialog.brand-dlg { width: min(1180px, calc(100vw - 32px)); }
 .pframe img { display: block; width: 100%; height: auto; border: 9px solid #fbf8f2; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1); }
 
 /* kiosks */
-.dstage--kiosks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 3vw, 36px); align-items: end; }
-.kiosk { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.dstage--kiosks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; align-items: end; padding: 0; background: var(--ink); }
+.kiosk { margin: 0; display: flex; flex-direction: column; background: var(--paper); }
 .kiosk img { display: block; width: 100%; height: auto; }
+.kiosk figcaption { padding: 10px 12px 12px; }
 
 /* flyers on a table */
 .dstage--flyers { display: flex; justify-content: center; padding-block: 40px; min-height: 0; }
@@ -1794,10 +1800,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
           <h3>Labels</h3>
           <p>Product labels for The Body Truth, a handmade natural body-care brand from the UAE.</p>
         </div>
-        <div class="dstage dstage--cream dstage--bottles">
-          <figure class="bottle"><img src="assets/designs/tbt_spray.webp" alt="Abundance sage room spray: amber bottle with The Body Truth label" width="560" height="1092" loading="lazy" decoding="async"><figcaption>Abundance · sage room spray, 150 ml</figcaption></figure>
-          <figure class="bottle"><img src="assets/designs/tbt_pump.webp" alt="Bloom nourishing hair conditioner: white pump bottle with The Body Truth label" width="560" height="991" loading="lazy" decoding="async"><figcaption>Bloom · nourishing hair conditioner, 80 ml</figcaption></figure>
-        </div>
+        <div class="dstage dstage--photo"><figure class="photo"><img src="assets/designs/tbt_bottles.webp" alt="The Body Truth Abundance sage room spray in an amber glass bottle beside the Bloom hair conditioner in a white pump bottle" width="1200" height="1008" loading="lazy" decoding="async"><figcaption>Abundance · sage room spray, 150 ml &nbsp;·&nbsp; Bloom · nourishing hair conditioner, 80 ml</figcaption></figure></div>
       </div>
       <div class="dsec">
         <div class="dsec-head">
@@ -1845,11 +1848,11 @@ dialog.wall::backdrop { background: #0d0d0f; }
       <div class="dsec">
         <div class="dsec-head">
           <h3>Kiosk concepts</h3>
-          <p>Two wrap ideas for a Krush Burger kiosk: one loud and hungry, one built on the K.</p>
+          <p>Krush is a vibrant, young brand, and my aim was to bring that vibrance to people. Who wouldn’t stop and look at a stall like this?</p>
         </div>
-        <div class="dstage dstage--floor dstage--kiosks">
-          <figure class="kiosk"><img src="assets/designs/krush_kiosk1.webp" alt="Kiosk concept 1: orange wrap with two open mouths reaching for a flying burger, “Everything is Krush-tastic”" width="1100" height="840" loading="lazy" decoding="async"><figcaption>Everything is Krush-tastic</figcaption></figure>
-          <figure class="kiosk"><img src="assets/designs/krush_kiosk2.webp" alt="Kiosk concept 2: a colour-block grid of dripping K marks and Krush Burger logos" width="1100" height="840" loading="lazy" decoding="async"><figcaption>The K grid</figcaption></figure>
+        <div class="dstage dstage--kiosks dstage--photos">
+          <figure class="kiosk"><img src="assets/designs/krush_kiosk1.webp" alt="Krush Burger kiosk with a red header and an orange wrap showing two open mouths reaching for a flying burger, “Everything is Krush-tastic”" width="1100" height="792" loading="lazy" decoding="async"><figcaption>Everything is Krush-tastic</figcaption></figure>
+          <figure class="kiosk"><img src="assets/designs/krush_kiosk2.webp" alt="Krush Burger kiosk with a red header and a colour-block wrap of dripping K marks and Krush Burger logos" width="1100" height="792" loading="lazy" decoding="async"><figcaption>The K grid</figcaption></figure>
         </div>
       </div>
       <div class="dsec">
@@ -1897,11 +1900,11 @@ dialog.wall::backdrop { background: #0d0d0f; }
     <section class="dsheet" id="d-djc" role="tabpanel" aria-labelledby="tab-d-djc" hidden>
       <div class="dsec">
         <div class="dsec-head">
-          <h3>Business cards</h3>
-          <p>A pool on the front, desert dunes on the back. “Hi, I’m the clueless dude. Call me and let’s vibe.”</p>
+          <h3>Membership cards</h3>
+          <p>At Dude Just Create, everyone who walked in was a “dude”. Every member got a card that said so: a pool on the front, the desert on the back, and a line that set the tone. “Hi, I’m the clueless dude. Call me and let’s vibe.”</p>
         </div>
         <div class="dstage dstage--navy dstage--djc">
-          <img class="djc-cards" src="assets/designs/djc_cards.webp" alt="Dude Just Create business cards: a pool illustration on the front and desert dunes on the back" width="1200" height="366" loading="lazy" decoding="async">
+          <img class="djc-cards" src="assets/designs/djc_cards.webp" alt="Dude Just Create membership card: a pool illustration on the front and desert dunes on the back" width="1200" height="366" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
