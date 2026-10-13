@@ -6,7 +6,7 @@
 <meta property="og:title" content="Zahabiya Murtuza · Portfolio">
 <meta property="og:description" content="Brand storytelling, content, events and partnerships.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='3' y='3' width='58' height='58' rx='16' fill='%23b81c42' stroke='%23111' stroke-width='3'/%3E%3Crect x='10' y='7' width='44' height='40' rx='12' fill='%23ea335d' stroke='%23111' stroke-width='3'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='28' fill='%23111'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='3' y='3' width='58' height='58' rx='16' fill='%237f1330' stroke='%23111' stroke-width='3'/%3E%3Crect x='10' y='7' width='44' height='40' rx='12' fill='%23ffc6bf' stroke='%23111' stroke-width='3'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='28' fill='%23111'%3EZ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900&display=swap">
 <title>Zahabiya's Portfolio</title>
@@ -20,27 +20,35 @@
 :root {
   color-scheme: light;
   /* ─── Colour ─── */
-  --sky: #60cffa;
-  --royal: #3861f6;
-  --violet: #8819f6;
-  --pink: #ea335d;
-  --orange: #f09236;
-  --lime: #bee548;
-  --mint: #76fbdc;
+  /* Ruby Chic */
+  --burgundy: #7f1330;
+  --blush: #ffc6bf;
+  --teal: #003744;
+  --coral: #fe8982;
+  --cream: #ffeee3;
+  --raspberry: #b72552;
+  /* older names, now mapped onto the palette */
+  --sky: var(--blush);
+  --royal: var(--teal);
+  --violet: var(--burgundy);
+  --pink: var(--raspberry);
+  --orange: var(--coral);
+  --lime: var(--coral);
+  --mint: var(--cream);
   --ink: #111111;          /* outlines, lettering */
   --text: #111111;         /* primary text */
   --muted: #55555c;        /* secondary text */
   --accent: var(--pink);   /* editorial accent */
-  --accent-deep: #c81c45;  /* pink for small text on white */
+  --accent-deep: var(--burgundy);  /* small accent text on white */
   --paper: #ffffff;
   --strip: var(--sky);     /* marquee ground */
-  --strip-ink: #111111;    /* marquee text */
+  --strip-ink: var(--burgundy); /* marquee text */
   --night: #111111;        /* contact section */
   --night-text: #ffffff;
   --night-muted: #b4b4bb;
-  --night-accent: var(--pink);
-  --night-link: var(--lime);
-  --focus: var(--violet);
+  --night-accent: var(--coral);
+  --night-link: var(--blush);
+  --focus: var(--teal);
 
   /* ─── Type ─── */
   --display: "Satoshi", "Figtree", "Helvetica Neue", Arial, sans-serif;
@@ -242,23 +250,16 @@ button { font: inherit; color: inherit; }
   font: 900 74px/0.92 var(--display);
   letter-spacing: -0.05em;
   color: var(--tone, #ffffff);
-  -webkit-text-stroke: 5px var(--ink);
-  paint-order: stroke fill;
-  text-shadow: 0 4px 0 var(--ink);
+  text-shadow: 0 3px 0 color-mix(in srgb, var(--base) 70%, #000);
 }
 .key-cap {
   font: 800 10.5px/1.15 var(--body);
   letter-spacing: .07em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--tone, #111) 72%, #000);
+  color: var(--tone, #111);
 }
 /* Enter: white type on bright pink, outlined like before */
-.key--enter .key-cap {
-  color: #ffffff;
-  text-shadow:
-    1.5px 0 0 var(--ink), -1.5px 0 0 var(--ink), 0 1.5px 0 var(--ink), 0 -1.5px 0 var(--ink),
-    1px 1px 0 var(--ink), -1px -1px 0 var(--ink), 1px -1px 0 var(--ink), -1px 1px 0 var(--ink);
-}
+.key--enter .key-cap { color: var(--tone); }
 
 /* hover / focus: face sinks ~8px */
 .key:hover, .key:focus-visible { --face-y: 8px; }
@@ -1303,20 +1304,20 @@ dialog.wall::backdrop { background: #0d0d0f; }
       <div class="kb-wrap" id="kb-wrap">
         <div class="kb" id="kb">
           <!-- upper row -->
-          <button type="button" class="key key--upper" data-dialog="dlg-about"   style="--x:73px;--y:0px;--face:#ffffff;--base:#e6e2dc;--tone:#ea335d"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">P</span><span class="key-cap">About me</span></span></button>
-          <button type="button" class="key key--upper" data-dialog="dlg-interviews" style="--x:219px;--y:0px;--face:#ffffff;--base:#e6e2dc;--tone:#60cffa"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Interviews</span></span></button>
-          <button type="button" class="key key--upper" data-dialog="dlg-publications" style="--x:365px;--y:0px;--face:#ffffff;--base:#e6e2dc;--tone:#8819f6"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">R</span><span class="key-cap">Publications</span></span></button>
-          <button type="button" class="key key--upper" data-dialog="dlg-awards" style="--x:511px;--y:0px;--face:#ffffff;--base:#e6e2dc;--tone:#f09236"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">T</span><span class="key-cap">Awards</span></span></button>
+          <button type="button" class="key key--upper" data-dialog="dlg-about"   style="--x:73px;--y:0px;--face:#7f1330;--base:#55091f;--tone:#ffeee3"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">P</span><span class="key-cap">About me</span></span></button>
+          <button type="button" class="key key--upper" data-dialog="dlg-interviews" style="--x:219px;--y:0px;--face:#ffc6bf;--base:#e8a097;--tone:#7f1330"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Interviews</span></span></button>
+          <button type="button" class="key key--upper" data-dialog="dlg-publications" style="--x:365px;--y:0px;--face:#003744;--base:#00222b;--tone:#ffc6bf"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">R</span><span class="key-cap">Publications</span></span></button>
+          <button type="button" class="key key--upper" data-dialog="dlg-awards" style="--x:511px;--y:0px;--face:#fe8982;--base:#d8615b;--tone:#7f1330"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">T</span><span class="key-cap">Awards</span></span></button>
           <!-- enter spans both rows -->
-          <a class="key key--enter" href="#contact" style="--x:657px;--y:0px;--face:#ea335d;--base:#b81c42;--tone:#ffffff"><span class="key-base" aria-hidden="true"></span><span class="key-face">
-            <svg class="enter-arrow" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 3)" stroke="#111" stroke-width="17"><path d="M82 14v36a14 14 0 0 1-14 14H20"/><path d="M40 42 18 64l22 22"/></g><g stroke="#111" stroke-width="17"><path d="M82 14v36a14 14 0 0 1-14 14H20"/><path d="M40 42 18 64l22 22"/></g><g stroke="#fff" stroke-width="9"><path d="M82 14v36a14 14 0 0 1-14 14H20"/><path d="M40 42 18 64l22 22"/></g></svg>
+          <a class="key key--enter" href="#contact" style="--x:657px;--y:0px;--face:#b72552;--base:#83173a;--tone:#ffeee3"><span class="key-base" aria-hidden="true"></span><span class="key-face">
+            <svg class="enter-arrow" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 3)" stroke="#83173a" stroke-width="10"><path d="M82 14v36a14 14 0 0 1-14 14H20"/><path d="M40 42 18 64l22 22"/></g><g stroke="#ffeee3" stroke-width="10"><path d="M82 14v36a14 14 0 0 1-14 14H20"/><path d="M40 42 18 64l22 22"/></g></svg>
             <span class="key-cap">Let’s talk</span></span></a>
           <!-- lower row -->
-          <button type="button" class="key key--lower" data-dialog="dlg-game"    style="--x:0px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#3861f6"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">F</span><span class="key-cap">Fun break!</span></span></button>
-          <button type="button" class="key key--lower" data-dialog="dlg-branding" style="--x:146px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#f09236"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Branding</span></span></button>
-          <button type="button" class="key key--lower" data-dialog="dlg-designs" style="--x:292px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#76fbdc"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">L</span><span class="key-cap">Designs</span></span></button>
-          <span class="key key--lower key--blank" aria-hidden="true" style="--x:438px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#ea335d"><span class="key-base"></span><span class="key-face"><span class="key-letter">I</span></span></span>
-          <button type="button" class="key key--lower" data-dialog="dlg-wall"  style="--x:584px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#3861f6"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Zahabiya’s wall</span></span></button>
+          <button type="button" class="key key--lower" data-dialog="dlg-game"    style="--x:0px;--y:139px;--face:#ffc6bf;--base:#e8a097;--tone:#7f1330"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">F</span><span class="key-cap">Fun break!</span></span></button>
+          <button type="button" class="key key--lower" data-dialog="dlg-branding" style="--x:146px;--y:139px;--face:#003744;--base:#00222b;--tone:#ffc6bf"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Branding</span></span></button>
+          <button type="button" class="key key--lower" data-dialog="dlg-designs" style="--x:292px;--y:139px;--face:#fe8982;--base:#d8615b;--tone:#7f1330"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">L</span><span class="key-cap">Designs</span></span></button>
+          <span class="key key--lower key--blank" aria-hidden="true" style="--x:438px;--y:139px;--face:#7f1330;--base:#55091f;--tone:#ffeee3"><span class="key-base"></span><span class="key-face"><span class="key-letter">I</span></span></span>
+          <button type="button" class="key key--lower" data-dialog="dlg-wall"  style="--x:584px;--y:139px;--face:#ffeee3;--base:#e9cdb9;--tone:#b72552"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Zahabiya’s wall</span></span></button>
         </div>
       </div>
     </section>
@@ -1360,7 +1361,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
 </section>
 
 <!-- ═════════ DIALOGS ═════════ -->
-<dialog id="dlg-work" class="wide" aria-labelledby="dlg-work-title" style="--tint:#60cffa">
+<dialog id="dlg-work" class="wide" aria-labelledby="dlg-work-title" style="--tint:#ffc6bf">
   <div class="dlg-head">
     <div><h2 id="dlg-work-title">Selected work</h2></div>
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
@@ -1381,7 +1382,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
   <div class="dlg-foot"><a class="cta" href="#contact" data-close>Let’s talk ↗</a><span class="small">Case studies coming soon.</span></div>
 </dialog>
 
-<dialog id="dlg-game" class="wide" aria-labelledby="dlg-game-title" style="--tint:#3861f6;--tint-ink:#ffffff">
+<dialog id="dlg-game" class="wide" aria-labelledby="dlg-game-title" style="--tint:#ffc6bf">
   <div class="dlg-head">
     <div><p class="dlg-eyebrow">F</p><h2 id="dlg-game-title">Fun break!</h2></div>
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
@@ -1419,7 +1420,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
   </div>
 </dialog>
 
-<dialog id="dlg-interviews" class="wide" aria-labelledby="dlg-interviews-title" style="--tint:#60cffa">
+<dialog id="dlg-interviews" class="wide" aria-labelledby="dlg-interviews-title" style="--tint:#ffc6bf">
   <div class="dlg-head">
     <div><p class="dlg-eyebrow">O</p><h2 id="dlg-interviews-title">Interviews</h2></div>
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
@@ -1439,7 +1440,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
   <div class="dlg-foot"><a class="cta" href="#contact" data-close>Let’s talk ↗</a><span class="small">Episodes open on YouTube.</span></div>
 </dialog>
 
-<dialog id="dlg-publications" class="wide" aria-labelledby="dlg-publications-title" style="--tint:#8819f6;--tint-ink:#ffffff">
+<dialog id="dlg-publications" class="wide" aria-labelledby="dlg-publications-title" style="--tint:#003744;--tint-ink:#ffeee3">
   <div class="dlg-head">
     <div><p class="dlg-eyebrow">R</p><h2 id="dlg-publications-title">Publications</h2></div>
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
@@ -1456,7 +1457,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
   <div class="dlg-foot"><a class="cta" href="#contact" data-close>Let’s talk ↗</a></div>
 </dialog>
 
-<dialog id="dlg-awards" class="wide" aria-labelledby="dlg-awards-title" style="--tint:#f09236">
+<dialog id="dlg-awards" class="wide" aria-labelledby="dlg-awards-title" style="--tint:#fe8982">
   <div class="dlg-head">
     <div><p class="dlg-eyebrow">T</p><h2 id="dlg-awards-title">Awards</h2></div>
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
@@ -1480,7 +1481,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
   <div class="dlg-foot"><a class="cta" href="#contact" data-close>Let’s talk ↗</a></div>
 </dialog>
 
-<dialog id="dlg-branding" class="wide brand-dlg" aria-labelledby="dlg-branding-title" style="--tint:#f09236">
+<dialog id="dlg-branding" class="wide brand-dlg" aria-labelledby="dlg-branding-title" style="--tint:#003744;--tint-ink:#ffeee3">
   <div class="dlg-head">
     <div><p class="dlg-eyebrow">O</p><h2 id="dlg-branding-title">Branding</h2></div>
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
@@ -1729,7 +1730,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
   <div class="dlg-foot"><a class="cta" href="#contact" data-close>Let’s talk ↗</a><span class="small">5 brands</span></div>
 </dialog>
 
-<dialog id="dlg-designs" class="wide brand-dlg designs-dlg" aria-labelledby="dlg-designs-title" style="--tint:#76fbdc">
+<dialog id="dlg-designs" class="wide brand-dlg designs-dlg" aria-labelledby="dlg-designs-title" style="--tint:#fe8982">
   <div class="dlg-head">
     <div><p class="dlg-eyebrow">L</p><h2 id="dlg-designs-title">Designs</h2></div>
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
@@ -1917,7 +1918,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
   <div class="dlg-foot"><a class="cta" href="#contact" data-close>Let’s talk ↗</a><span class="small">5 projects</span></div>
 </dialog>
 
-<dialog id="dlg-about" class="wide" aria-labelledby="dlg-about-title" style="--tint:#ea335d;--tint-ink:#ffffff">
+<dialog id="dlg-about" class="wide" aria-labelledby="dlg-about-title" style="--tint:#7f1330;--tint-ink:#ffeee3">
   <div class="dlg-head">
     <div><p class="dlg-eyebrow">P</p><h2 id="dlg-about-title">About me</h2></div>
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
