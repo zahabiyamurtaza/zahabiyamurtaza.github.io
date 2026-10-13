@@ -1054,6 +1054,77 @@ dialog.brand-dlg { width: min(1180px, calc(100vw - 32px)); }
   .ph-fg { transition: none; }
 }
 
+/* ═════════ VOLUNTEER ═════════ */
+.vol-sec { margin-top: 28px; }
+.dlg-body .vol-sec + .vol-sec { margin-top: 30px; }
+.vol-mags {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(20px, 5vw, 56px);
+  flex-wrap: wrap;
+  padding: clamp(28px, 4vw, 48px) clamp(18px, 3vw, 34px) clamp(22px, 3vw, 30px);
+  background: radial-gradient(120% 100% at 50% 0%, #fff6f1 0%, #f6dcd5 80%);
+}
+.mag { margin: 0; width: clamp(200px, 26vw, 290px); display: flex; flex-direction: column; gap: 14px; }
+.mag--a { transform: rotate(-2.5deg); }
+.mag--b { transform: rotate(2deg) translateY(-6px); }
+.mag-cover {
+  position: relative;
+  border-radius: 2px 6px 6px 2px;
+  overflow: hidden;
+  box-shadow: 0 2px 3px rgba(60, 15, 25, .16), 0 22px 34px -14px rgba(60, 15, 25, .5);
+}
+.mag-cover img { display: block; width: 100%; height: auto; }
+/* spine fold + paper sheen */
+.mag-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.28) 0, rgba(0,0,0,.08) 2.2%, rgba(255,255,255,.22) 3.2%, rgba(255,255,255,0) 6%),
+    linear-gradient(115deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.14) 52%, rgba(255,255,255,0) 64%);
+  pointer-events: none;
+}
+.mag figcaption { font: 500 13px/1.4 var(--body); color: #6a4a50; text-align: center; }
+.mag figcaption span { display: block; font: 800 15px/1.2 var(--display); color: var(--burgundy); letter-spacing: -0.01em; }
+
+.vol-paper {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  padding: clamp(28px, 4vw, 44px);
+  background: var(--cream);
+}
+.paper-stack { position: relative; width: min(100%, 300px); aspect-ratio: 460 / 650; margin: 0 auto; }
+.pp { position: absolute; inset: 0; width: 100%; height: 100%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 14px 26px -12px rgba(60, 15, 25, .35); }
+.pp3 { transform: rotate(6deg) translate(10%, 2%); }
+.pp2 { transform: rotate(2.5deg) translate(5%, 1%); }
+.pp1 { transform: rotate(-2deg); }
+.paper-text { min-width: 0; }
+.paper-kicker { margin: 0 0 6px; font: 700 11.5px/1.3 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--raspberry); }
+.paper-text h4 { margin: 0 0 12px; font: 900 clamp(24px, 3vw, 32px)/1.08 var(--display); letter-spacing: -0.03em; color: var(--teal); }
+.paper-text p:not(.paper-kicker) { margin: 0 0 18px; font-size: 16px; line-height: 1.6; color: #3d2a2e; max-width: 52ch; }
+.paper-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--burgundy);
+  color: var(--cream);
+  font: 700 14px/1 var(--body);
+  text-decoration: none;
+  transition: background-color .18s ease;
+}
+.paper-link:hover { background: var(--raspberry); }
+@media (max-width: 680px) {
+  .vol-paper { grid-template-columns: minmax(0, 1fr); }
+  .paper-stack { width: 62%; }
+  .mag--a, .mag--b { transform: none; }
+}
+
 /* fun break game */
 .game-body { padding-bottom: 24px; }
 .game-canvas {
@@ -1306,7 +1377,7 @@ dialog.wall::backdrop { background: #0d0d0f; }
           <button type="button" class="key key--lower" data-dialog="dlg-game"    style="--x:0px;--y:139px;--face:#ffc6bf;--base:#eba59c;--tone:#7f1330"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">F</span><span class="key-cap">Fun break!</span></span></button>
           <button type="button" class="key key--lower" data-dialog="dlg-branding" style="--x:146px;--y:139px;--face:#003744;--base:#002a34;--tone:#ffc6bf"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Branding</span></span></button>
           <button type="button" class="key key--lower" data-dialog="dlg-designs" style="--x:292px;--y:139px;--face:#fe8982;--base:#e0675f;--tone:#7f1330"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">L</span><span class="key-cap">Designs</span></span></button>
-          <span class="key key--lower key--blank" aria-hidden="true" style="--x:438px;--y:139px;--face:#7f1330;--base:#5f0d23;--tone:#ffeee3"><span class="key-base"></span><span class="key-face"><span class="key-letter">I</span></span></span>
+          <button type="button" class="key key--lower" data-dialog="dlg-volunteer" style="--x:438px;--y:139px;--face:#7f1330;--base:#5f0d23;--tone:#ffeee3"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">I</span><span class="key-cap">Volunteer work</span></span></button>
           <button type="button" class="key key--lower" data-dialog="dlg-wall"  style="--x:584px;--y:139px;--face:#fff4ec;--base:#ecd6c6;--tone:#b72552"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Zahabiya’s wall</span></span></button>
         </div>
       </div>
@@ -1906,6 +1977,55 @@ dialog.wall::backdrop { background: #0d0d0f; }
     </section>
   </div>
   <div class="dlg-foot"><a class="cta" href="#contact" data-close>Let’s talk ↗</a><span class="small">5 projects</span></div>
+</dialog>
+
+<dialog id="dlg-volunteer" class="wide" aria-labelledby="dlg-volunteer-title" style="--tint:#7f1330;--tint-ink:#ffeee3">
+  <div class="dlg-head">
+    <div><p class="dlg-eyebrow">I</p><h2 id="dlg-volunteer-title">Volunteer work</h2></div>
+    <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
+  </div>
+  <div class="dlg-body">
+    <p class="lead">Giving back has always mattered to me, and I was lucky enough to stumble upon <strong>ALERT INDIA</strong>, an NGO working on leprosy, HIV/AIDS and TB.</p>
+    <p>With them, I’ve designed and written two annual reports and a research paper. This is work for the soul, and I hope it’s only the beginning.</p>
+
+    <div class="dsec vol-sec">
+      <div class="dsec-head">
+        <h3>Annual reports</h3>
+        <p>Cover design, layout and copy for ALERT INDIA’s yearly report to its donors and partners.</p>
+      </div>
+      <div class="dstage vol-mags">
+        <figure class="mag mag--a">
+          <div class="mag-cover"><img src="assets/volunteer/alert_ar_2023_24.webp" alt="ALERT INDIA Annual Report 2023–2024, 45th edition: a large red A filled with photos from community health sessions, “End leprosy together, say no to fear and exclusion”" width="680" height="942" loading="lazy" decoding="async"></div>
+          <figcaption><span>2023–24</span> 45th edition · End leprosy together</figcaption>
+        </figure>
+        <figure class="mag mag--b">
+          <div class="mag-cover"><img src="assets/volunteer/alert_ar_2024_25.webp" alt="ALERT INDIA Annual Report 2024–2025, 46th edition: a smiling man in a striped shirt sits in a doorway, “Life reclaimed, dignity restored, hope renewed”" width="680" height="914" loading="lazy" decoding="async"></div>
+          <figcaption><span>2024–25</span> 46th edition · Life reclaimed, dignity restored, hope renewed</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="dsec vol-sec">
+      <div class="dsec-head">
+        <h3>Research paper</h3>
+        <p>Written with the help of Mr Anthony Samy, Chief Executive of ALERT INDIA, and the books and pamphlets the organisation has built up over the years.</p>
+      </div>
+      <div class="dstage vol-paper">
+        <div class="paper-stack" aria-hidden="true">
+          <img src="assets/volunteer/paper_p3.webp" alt="" width="460" height="650" loading="lazy" class="pp pp3">
+          <img src="assets/volunteer/paper_p2.webp" alt="" width="460" height="650" loading="lazy" class="pp pp2">
+          <img src="assets/volunteer/paper_p1.webp" alt="" width="460" height="650" loading="lazy" class="pp pp1">
+        </div>
+        <div class="paper-text">
+          <p class="paper-kicker">Research paper</p>
+          <h4>Studying the Leprosy Crisis in India</h4>
+          <p>In 2005, the WHO announced that leprosy had been eliminated in India. The word was soon mistaken for eradication: case detection slowed, awareness work faded and funding moved elsewhere. Today India still has more leprosy cases than any other country. This paper looks at how that happened, and what it has cost the people still living with the disease.</p>
+          <a class="paper-link" href="assets/volunteer/Studying-the-Leprosy-Crisis-in-India.pdf" target="_blank" rel="noopener">Read the paper (PDF) ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dlg-foot"><a class="cta" href="#contact" data-close>Let’s talk ↗</a></div>
 </dialog>
 
 <dialog id="dlg-about" class="wide" aria-labelledby="dlg-about-title" style="--tint:#7f1330;--tint-ink:#ffeee3">
