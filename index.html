@@ -227,6 +227,7 @@ button { font: inherit; color: inherit; }
   border-radius: 29px;
   background:
     radial-gradient(120% 90% at 30% 10%, rgba(255,255,255,.42), rgba(255,255,255,0) 55%),
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.035)),
     var(--face);
   display: flex;
   flex-direction: column;
@@ -240,15 +241,19 @@ button { font: inherit; color: inherit; }
 .key-letter {
   font: 900 74px/0.92 var(--display);
   letter-spacing: -0.05em;
-  color: #ffffff;
+  color: var(--tone, #ffffff);
   -webkit-text-stroke: 5px var(--ink);
   paint-order: stroke fill;
   text-shadow: 0 4px 0 var(--ink);
 }
 .key-cap {
-  font: 700 10.5px/1.15 var(--body);
+  font: 800 10.5px/1.15 var(--body);
   letter-spacing: .07em;
   text-transform: uppercase;
+  color: color-mix(in srgb, var(--tone, #111) 72%, #000);
+}
+/* Enter: white type on bright pink, outlined like before */
+.key--enter .key-cap {
   color: #ffffff;
   text-shadow:
     1.5px 0 0 var(--ink), -1.5px 0 0 var(--ink), 0 1.5px 0 var(--ink), 0 -1.5px 0 var(--ink),
@@ -1298,20 +1303,20 @@ dialog.wall::backdrop { background: #0d0d0f; }
       <div class="kb-wrap" id="kb-wrap">
         <div class="kb" id="kb">
           <!-- upper row -->
-          <button type="button" class="key key--upper" data-dialog="dlg-about"   style="--x:73px;--y:0px;--face:#ea335d;--base:#b81c42"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">P</span><span class="key-cap">About me</span></span></button>
-          <button type="button" class="key key--upper" data-dialog="dlg-interviews" style="--x:219px;--y:0px;--face:#60cffa;--base:#2ea6d8"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Interviews</span></span></button>
-          <button type="button" class="key key--upper" data-dialog="dlg-publications" style="--x:365px;--y:0px;--face:#8819f6;--base:#5e0cbc"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">R</span><span class="key-cap">Publications</span></span></button>
-          <button type="button" class="key key--upper" data-dialog="dlg-awards" style="--x:511px;--y:0px;--face:#f09236;--base:#c56b16"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">T</span><span class="key-cap">Awards</span></span></button>
+          <button type="button" class="key key--upper" data-dialog="dlg-about"   style="--x:73px;--y:0px;--face:#ffffff;--base:#e6e2dc;--tone:#ea335d"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">P</span><span class="key-cap">About me</span></span></button>
+          <button type="button" class="key key--upper" data-dialog="dlg-interviews" style="--x:219px;--y:0px;--face:#ffffff;--base:#e6e2dc;--tone:#60cffa"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Interviews</span></span></button>
+          <button type="button" class="key key--upper" data-dialog="dlg-publications" style="--x:365px;--y:0px;--face:#ffffff;--base:#e6e2dc;--tone:#8819f6"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">R</span><span class="key-cap">Publications</span></span></button>
+          <button type="button" class="key key--upper" data-dialog="dlg-awards" style="--x:511px;--y:0px;--face:#ffffff;--base:#e6e2dc;--tone:#f09236"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">T</span><span class="key-cap">Awards</span></span></button>
           <!-- enter spans both rows -->
-          <a class="key key--enter" href="#contact" style="--x:657px;--y:0px;--face:#bee548;--base:#8db520"><span class="key-base" aria-hidden="true"></span><span class="key-face">
+          <a class="key key--enter" href="#contact" style="--x:657px;--y:0px;--face:#ea335d;--base:#b81c42;--tone:#ffffff"><span class="key-base" aria-hidden="true"></span><span class="key-face">
             <svg class="enter-arrow" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 3)" stroke="#111" stroke-width="17"><path d="M82 14v36a14 14 0 0 1-14 14H20"/><path d="M40 42 18 64l22 22"/></g><g stroke="#111" stroke-width="17"><path d="M82 14v36a14 14 0 0 1-14 14H20"/><path d="M40 42 18 64l22 22"/></g><g stroke="#fff" stroke-width="9"><path d="M82 14v36a14 14 0 0 1-14 14H20"/><path d="M40 42 18 64l22 22"/></g></svg>
             <span class="key-cap">Let’s talk</span></span></a>
           <!-- lower row -->
-          <button type="button" class="key key--lower" data-dialog="dlg-game"    style="--x:0px;--y:139px;--face:#3861f6;--base:#1f43c9"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">F</span><span class="key-cap">Fun break!</span></span></button>
-          <button type="button" class="key key--lower" data-dialog="dlg-branding" style="--x:146px;--y:139px;--face:#f09236;--base:#c56b16"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Branding</span></span></button>
-          <button type="button" class="key key--lower" data-dialog="dlg-designs" style="--x:292px;--y:139px;--face:#76fbdc;--base:#3ccaa8"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">L</span><span class="key-cap">Designs</span></span></button>
-          <span class="key key--lower key--blank" aria-hidden="true" style="--x:438px;--y:139px;--face:#ea335d;--base:#b81c42"><span class="key-base"></span><span class="key-face"><span class="key-letter">I</span></span></span>
-          <button type="button" class="key key--lower" data-dialog="dlg-wall"  style="--x:584px;--y:139px;--face:#3861f6;--base:#1f43c9"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Zahabiya’s wall</span></span></button>
+          <button type="button" class="key key--lower" data-dialog="dlg-game"    style="--x:0px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#3861f6"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">F</span><span class="key-cap">Fun break!</span></span></button>
+          <button type="button" class="key key--lower" data-dialog="dlg-branding" style="--x:146px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#f09236"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Branding</span></span></button>
+          <button type="button" class="key key--lower" data-dialog="dlg-designs" style="--x:292px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#76fbdc"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">L</span><span class="key-cap">Designs</span></span></button>
+          <span class="key key--lower key--blank" aria-hidden="true" style="--x:438px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#ea335d"><span class="key-base"></span><span class="key-face"><span class="key-letter">I</span></span></span>
+          <button type="button" class="key key--lower" data-dialog="dlg-wall"  style="--x:584px;--y:139px;--face:#ffffff;--base:#e6e2dc;--tone:#3861f6"><span class="key-base" aria-hidden="true"></span><span class="key-face"><span class="key-letter" aria-hidden="true">O</span><span class="key-cap">Zahabiya’s wall</span></span></button>
         </div>
       </div>
     </section>
