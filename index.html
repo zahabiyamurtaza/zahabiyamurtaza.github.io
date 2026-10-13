@@ -493,33 +493,6 @@ dialog::backdrop { background: rgba(36, 28, 50, .45); backdrop-filter: blur(3px)
 }
 .dlg-foot .small { font-size: 13px; color: var(--muted); }
 
-/* work list */
-.work-list {
-  list-style: none;
-  margin: 0 0 20px;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-.work-list li {
-  border: 1.5px solid rgba(36, 28, 50, .16);
-  border-radius: 18px;
-  padding: 16px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.work-list h3 { margin: 0; font: 800 18px/1.2 var(--display); letter-spacing: -0.02em; color: var(--ink); }
-.work-list .meta {
-  font: 600 11.5px/1.3 var(--body);
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--accent-deep);
-}
-.work-list p { margin: 0; font-size: 14.5px; color: var(--muted); }
-@media (max-width: 640px) { .work-list { grid-template-columns: minmax(0, 1fr); } }
-
 /* about */
 .about-grid {
   display: grid;
@@ -1163,7 +1136,7 @@ dialog.brand-dlg { width: min(1180px, calc(100vw - 32px)); }
 .game-btn--go { background: var(--lime); }
 
 /* ═════════ ZAHABIYA'S WALL ═════════ */
-dialog.wall { --note: 128px; }
+dialog.wall { --note: 196px; }
 .wall-body { display: flex; flex-direction: column; gap: 16px; }
 .wall-body .lead { margin: 0; }
 .cork-frame {
@@ -1244,7 +1217,7 @@ dialog.wall { --note: 128px; }
   position: relative;
   width: var(--note);
   height: var(--note);
-  margin-left: calc(var(--note) * -0.1);
+  margin-left: calc(var(--note) * 0.04);
   padding: 22px 14px 14px;
   border: 0;
   border-radius: 2px 2px 6px 2px;
@@ -1264,7 +1237,7 @@ dialog.wall { --note: 128px; }
   display: block;
   height: 100%;
   overflow: hidden;
-  font: 500 calc(var(--note) * 0.105)/1.3 var(--display);
+  font: 500 calc(var(--note) * 0.074)/1.35 var(--display);
   letter-spacing: -0.005em;
   overflow-wrap: break-word;
   hyphens: auto;
@@ -1298,7 +1271,7 @@ dialog.wall { --note: 128px; }
   box-shadow: 2px 5px 4px rgba(0, 0, 0, .45);
 }
 @media (max-width: 600px) {
-  dialog.wall { --note: 108px; }
+  dialog.wall { --note: 160px; }
   .cork-frame { --rail: 10px; height: 340px; }
   .tray { padding: 22px 12px 18px; }
 }
@@ -1319,7 +1292,6 @@ dialog.wall { --note: 128px; }
     <a class="wordmark" href="#top" aria-label="zahabiya, home">zahabiya<span>.</span></a>
     <nav class="nav" aria-label="Main">
       <button type="button" class="nav-link" data-dialog="dlg-work">Work</button>
-      <button type="button" class="nav-link" data-dialog="dlg-about">About</button>
       <a class="nav-link nav-link--cta" href="#contact">Let’s talk ↗</a>
     </nav>
   </header>
@@ -1359,12 +1331,12 @@ dialog.wall { --note: 128px; }
   <div class="marquee" id="marquee">
     <div class="marquee-track" id="marquee-track">
       <div class="marquee-group">
-        <span class="marquee-item">Brand stories. Live moments. · Content, events and partnerships that bring people together. · Pick a key.</span>
-        <span class="marquee-item dup" aria-hidden="true">Brand stories. Live moments. · Content, events and partnerships that bring people together. · Pick a key.</span>
+        <span class="marquee-item">Pick a key and click away!</span>
+        <span class="marquee-item dup" aria-hidden="true">Pick a key and click away!</span>
       </div>
       <div class="marquee-group" aria-hidden="true">
-        <span class="marquee-item">Brand stories. Live moments. · Content, events and partnerships that bring people together. · Pick a key.</span>
-        <span class="marquee-item dup">Brand stories. Live moments. · Content, events and partnerships that bring people together. · Pick a key.</span>
+        <span class="marquee-item">Pick a key and click away!</span>
+        <span class="marquee-item dup">Pick a key and click away!</span>
       </div>
     </div>
   </div>
@@ -1373,11 +1345,11 @@ dialog.wall { --note: 128px; }
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div class="contact-inner">
     <h2 id="contact-title" tabindex="-1">
-      <span class="line">Good stories</span>
-      <span class="line">start with <em>hello.</em></span>
+      <span class="line">Got something</span>
+      <span class="line"><em>cool</em> in mind?</span>
     </h2>
     <div class="contact-body">
-      <p>Have a brand story to tell, an event to plan, or just want to say hi?</p>
+      <p>If there’s something you think we could create together, I’d love to hear about it. Here’s where you can find me.</p>
       <div class="email-row">
         <a class="email" id="email-link" href="#"></a>
         <button type="button" class="pill-btn" id="copy-email">Copy email</button>
@@ -1388,31 +1360,22 @@ dialog.wall { --note: 128px; }
     </div>
   </div>
   <footer class="site-footer">
-    <span>© <span id="year">2026</span> Zahabiya Murtuza</span>
-    <span>Marketing &amp; communications · Dubai</span>
+    <span>© <span id="year">2026</span> Zahabiya’s Portfolio</span>
+    <span>Dubai, UAE</span>
   </footer>
 </section>
 
 <!-- ═════════ DIALOGS ═════════ -->
-<dialog id="dlg-work" class="wide" aria-labelledby="dlg-work-title" style="--tint:#ffc6bf">
+<dialog id="dlg-work" aria-labelledby="dlg-work-title" style="--tint:#ffc6bf;--tint-ink:#7f1330">
   <div class="dlg-head">
-    <div><h2 id="dlg-work-title">Selected work</h2></div>
+    <div><h2 id="dlg-work-title">Before you start</h2></div>
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
   </div>
   <div class="dlg-body">
-    <p class="lead">Content, publications, awards and live brand experiences from IMAGES RetailME and Dude Just Dude.</p>
-    <ul class="work-list">
-      <li><span class="meta">IMAGES RetailME · Content series</span><h3>D2C Unfiltered</h3><p>Founder interview series. I lead the content, conduct the interviews and shape each brand’s story.</p></li>
-      <li><span class="meta">Publication · Design, concept &amp; content</span><h3>The MENA D2C Almanac</h3><p>Design concept and content curation for the region’s D2C almanac.</p></li>
-      <li><span class="meta">IMAGES RetailME · Industry awards</span><h3>Retail awards</h3><p>I lead the awards vertical from strategy to execution: 100+ nominations per event, jury sourcing and campaign alignment with marketing.</p></li>
-      <li><span class="meta">IMAGES RetailME · Membership</span><h3>Privilege Membership Club</h3><p>A membership platform that gives retailers visibility and builds industry relationships.</p></li>
-      <li><span class="meta">Magazine · Cover concept</span><h3>IMAGES RetailME, Vol. 16, Issues 2 &amp; 3</h3><p>Cover concepts for two issues of the retail magazine.</p></li>
-      <li><span class="meta">Events by Dude Just Dude · Activations</span><h3>Brand activations across the UAE</h3><p>Built the events division and delivered activations for Nakheel, TikTok, Dubai Parks &amp; Resorts and Dubai Lynx.</p></li>
-      <li><span class="meta">Dude Just Dude · Marketing &amp; growth</span><h3>Designer marketplace</h3><p>Drove marketing and business development, growing the marketplace to 60+ creators and helping secure the first round of investment.</p></li>
-      <li><span class="meta">Annual report · Design &amp; copy</span><h3>ALERT INDIA, Issues 45 &amp; 46</h3><p>Graphic design and copywriting for two editions of the annual report.</p></li>
-    </ul>
+    <p class="lead">Every key on the keyboard opens a different part of my work, from interviews and awards to branding, design and a few surprises.</p>
+    <p>This portfolio has been a labour of love, so take your time and click away. I hope you enjoy exploring it as much as I enjoyed making it.</p>
   </div>
-  <div class="dlg-foot"><a class="cta" href="#contact" data-close>Let’s talk ↗</a><span class="small">Case studies coming soon.</span></div>
+  <div class="dlg-foot"><button type="button" class="game-btn game-btn--go" data-close>Start clicking</button></div>
 </dialog>
 
 <dialog id="dlg-game" class="wide" aria-labelledby="dlg-game-title" style="--tint:#ffc6bf">
@@ -1439,7 +1402,7 @@ dialog.wall { --note: 128px; }
     <button type="button" class="close-btn" data-close>Close <span aria-hidden="true">✕</span></button>
   </div>
   <div class="dlg-body wall-body">
-    <p class="lead">Random thoughts, things I want to say and things that make me laugh. Pick a note and pin it to the board.</p>
+    <p class="lead">Random thoughts and little snippets that float around my mind. If social media has taught me anything, it’s that no thought is truly original, so I hope a few of these feel familiar. Pick a note and pin it to the board.</p>
     <div class="cork-frame">
       <span class="cap cap--tl" aria-hidden="true"></span><span class="cap cap--tr" aria-hidden="true"></span><span class="cap cap--bl" aria-hidden="true"></span><span class="cap cap--br" aria-hidden="true"></span>
       <div class="cork" id="cork"><p class="cork-empty" id="cork-empty">Nothing pinned yet…</p></div>
@@ -2430,16 +2393,9 @@ const CONFIG = {
 /* ═══ Zahabiya's wall ═══
    Add a new note by adding a line to WALL_NOTES. Every note shows up in the row automatically. */
 const WALL_NOTES = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing.",
-  "Sed do eiusmod tempor incididunt ut labore.",
-  "Ut enim ad minim veniam, quis nostrud!",
-  "Duis aute irure dolor in reprehenderit.",
-  "Excepteur sint occaecat cupidatat non proident.",
-  "Lorem ipsum dolor sit amet.",
-  "Nemo enim ipsam voluptatem quia voluptas sit aspernatur.",
-  "Neque porro quisquam est, qui dolorem ipsum?",
-  "Quis autem vel eum iure reprehenderit.",
-  "At vero eos et accusamus et iusto odio."
+  "My favourite AI prompt? “Make this sound human.” We’ve all learned to work with AI, and we still want it to sound like us.",
+  "Next project: slipping “lorem ipsum” into a real conversation. Who knows, it might just catch on.",
+  "Whatever happened to the ozone layer? I’m going to assume my school posters saved it. Pat on the back for me."
 ];
 
 (() => {
