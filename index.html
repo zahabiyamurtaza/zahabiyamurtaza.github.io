@@ -94,14 +94,48 @@ button { font: inherit; color: inherit; }
   padding: 18px var(--gutter);
   border-bottom: 1px solid rgba(36, 28, 50, .08);
 }
+/* logo: name on a space bar keycap */
 .wordmark {
-  font: 900 26px/1 var(--display);
-  letter-spacing: -0.045em;
-  color: var(--text);
+  --press: 0px;
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  color: var(--burgundy);
   text-decoration: none;
-  padding: 8px 0;
 }
-.wordmark span { color: var(--accent); }
+.sb-base {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f6e4d8 0%, #ecd6c6 55%, #d9bfad 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .5),
+    inset 0 0 0 1px #d8bba8,
+    0 4px 0 #c9a993,
+    0 12px 18px -8px rgba(70, 16, 32, .28);
+}
+.sb-top {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  right: 6px;
+  bottom: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: radial-gradient(130% 120% at 50% 0%, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0) 60%), #fff4ec;
+  box-shadow: inset 0 -4px 8px -4px rgba(0, 0, 0, .1), inset 0 1px 0 #fff;
+  font: 700 19px/1 var(--display);
+  letter-spacing: -0.02em;
+  transform: translateY(var(--press));
+  transition: transform .15s ease;
+}
+.sb-top .dot { color: var(--raspberry); }
+.wordmark:hover { --press: 2px; }
+.wordmark:active { --press: 4px; }
+.wordmark:focus-visible { outline-offset: 4px; border-radius: 16px; }
 .nav { display: flex; align-items: center; gap: clamp(4px, 1.6vw, 18px); }
 .nav-link {
   background: none;
@@ -127,7 +161,8 @@ button { font: inherit; color: inherit; }
 .nav-link--cta:hover { background: var(--lime); transform: translateY(1px); box-shadow: 0 2px 0 var(--ink); }
 .nav-link--cta:active { transform: translateY(3px); box-shadow: 0 0 0 var(--ink); }
 @media (max-width: 420px) {
-  .wordmark { font-size: 22px; }
+  .wordmark { width: 168px; height: 46px; }
+  .sb-top { font-size: 16px; }
   .nav-link { padding: 10px 8px; font-size: 14px; }
   .nav-link--cta { padding: 10px 12px; }
 }
@@ -1289,7 +1324,7 @@ dialog.wall { --note: 196px; }
 <body>
 <div class="hero">
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="zahabiya, home">zahabiya<span>.</span></a>
+    <a class="wordmark" href="#top" aria-label="Zahabiya, home"><span class="sb-base" aria-hidden="true"></span><span class="sb-top">Zahabiya<span class="dot">.</span></span></a>
     <nav class="nav" aria-label="Main">
       <button type="button" class="nav-link" data-dialog="dlg-work">Work</button>
       <a class="nav-link nav-link--cta" href="#contact">Let’s talk ↗</a>
