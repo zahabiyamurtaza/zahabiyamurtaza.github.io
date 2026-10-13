@@ -1091,37 +1091,28 @@ dialog.brand-dlg { width: min(1180px, calc(100vw - 32px)); }
 
 .vol-paper {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(24px, 4vw, 48px);
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 26px;
+  justify-items: center;
   padding: clamp(28px, 4vw, 44px);
   background: var(--cream);
 }
-.paper-stack { position: relative; width: min(100%, 300px); aspect-ratio: 460 / 650; margin: 0 auto; }
-.pp { position: absolute; inset: 0; width: 100%; height: 100%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 14px 26px -12px rgba(60, 15, 25, .35); }
-.pp3 { transform: rotate(6deg) translate(10%, 2%); }
-.pp2 { transform: rotate(2.5deg) translate(5%, 1%); }
-.pp1 { transform: rotate(-2deg); }
-.paper-text { min-width: 0; }
+.paper-text { min-width: 0; max-width: 640px; }
 .paper-kicker { margin: 0 0 6px; font: 700 11.5px/1.3 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--raspberry); }
 .paper-text h4 { margin: 0 0 12px; font: 900 clamp(24px, 3vw, 32px)/1.08 var(--display); letter-spacing: -0.03em; color: var(--teal); }
 .paper-text p:not(.paper-kicker) { margin: 0 0 18px; font-size: 16px; line-height: 1.6; color: #3d2a2e; max-width: 52ch; }
-.paper-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 10px 20px;
-  border-radius: 999px;
-  background: var(--burgundy);
-  color: var(--cream);
-  font: 700 14px/1 var(--body);
-  text-decoration: none;
-  transition: background-color .18s ease;
+.reader { display: flex; flex-direction: column; align-items: center; gap: 16px; min-width: 0; }
+.reader-page {
+  width: min(100%, 640px);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 6px 0 -2px #f3e6dc, 0 12px 0 -4px #ead8ca, 0 26px 36px -14px rgba(60, 15, 25, .4);
+  cursor: pointer;
 }
-.paper-link:hover { background: var(--raspberry); }
+.vslides { list-style: none; margin: 0; padding: 0; aspect-ratio: 760 / 1073; overflow: hidden; }
+.vslide img { display: block; width: 100%; height: auto; }
+.vslide-count { font: 700 14px/1 var(--body); color: var(--ink); font-variant-numeric: tabular-nums; min-width: 44px; text-align: center; }
 @media (max-width: 680px) {
   .vol-paper { grid-template-columns: minmax(0, 1fr); }
-  .paper-stack { width: 62%; }
   .mag--a, .mag--b { transform: none; }
 }
 
@@ -1986,12 +1977,12 @@ dialog.wall::backdrop { background: #0d0d0f; }
   </div>
   <div class="dlg-body">
     <p class="lead">Giving back has always mattered to me, and I was lucky enough to stumble upon <strong>ALERT INDIA</strong>, an NGO working on leprosy, HIV/AIDS and TB.</p>
-    <p>With them, I’ve designed and written two annual reports and a research paper. This is work for the soul, and I hope it’s only the beginning.</p>
+    <p>With them, I’ve designed two annual reports, helped write them, and written a research paper of my own. This is work for the soul, and I hope it’s only the beginning.</p>
 
     <div class="dsec vol-sec">
       <div class="dsec-head">
         <h3>Annual reports</h3>
-        <p>Cover design, layout and copy for ALERT INDIA’s yearly report to its donors and partners.</p>
+        <p>ALERT INDIA’s yearly report to its donors and partners. I designed the covers and the inside layout, and helped with the copywriting.</p>
       </div>
       <div class="dstage vol-mags">
         <figure class="mag mag--a">
@@ -2011,16 +2002,18 @@ dialog.wall::backdrop { background: #0d0d0f; }
         <p>Written with the help of Mr Anthony Samy, Chief Executive of ALERT INDIA, and the books and pamphlets the organisation has built up over the years.</p>
       </div>
       <div class="dstage vol-paper">
-        <div class="paper-stack" aria-hidden="true">
-          <img src="assets/volunteer/paper_p3.webp" alt="" width="460" height="650" loading="lazy" class="pp pp3">
-          <img src="assets/volunteer/paper_p2.webp" alt="" width="460" height="650" loading="lazy" class="pp pp2">
-          <img src="assets/volunteer/paper_p1.webp" alt="" width="460" height="650" loading="lazy" class="pp pp1">
-        </div>
         <div class="paper-text">
           <p class="paper-kicker">Research paper</p>
           <h4>Studying the Leprosy Crisis in India</h4>
           <p>In 2005, the WHO announced that leprosy had been eliminated in India. The word was soon mistaken for eradication: case detection slowed, awareness work faded and funding moved elsewhere. Today India still has more leprosy cases than any other country. This paper looks at how that happened, and what it has cost the people still living with the disease.</p>
-          <a class="paper-link" href="assets/volunteer/Studying-the-Leprosy-Crisis-in-India.pdf" target="_blank" rel="noopener">Read the paper (PDF) ↗</a>
+        </div>
+        <div class="reader">
+          <div class="reader-page"><ul class="vslides" aria-live="polite"><li class="vslide"><img src="assets/volunteer/paper_page_1.webp" alt="Studying the Leprosy Crisis in India, page 1 of 9" width="760" height="1073" decoding="async"></li><li class="vslide" hidden><img src="assets/volunteer/paper_page_2.webp" alt="Studying the Leprosy Crisis in India, page 2 of 9" width="760" height="1073" loading="lazy" decoding="async"></li><li class="vslide" hidden><img src="assets/volunteer/paper_page_3.webp" alt="Studying the Leprosy Crisis in India, page 3 of 9" width="760" height="1073" loading="lazy" decoding="async"></li><li class="vslide" hidden><img src="assets/volunteer/paper_page_4.webp" alt="Studying the Leprosy Crisis in India, page 4 of 9" width="760" height="1073" loading="lazy" decoding="async"></li><li class="vslide" hidden><img src="assets/volunteer/paper_page_5.webp" alt="Studying the Leprosy Crisis in India, page 5 of 9" width="760" height="1073" loading="lazy" decoding="async"></li><li class="vslide" hidden><img src="assets/volunteer/paper_page_6.webp" alt="Studying the Leprosy Crisis in India, page 6 of 9" width="760" height="1073" loading="lazy" decoding="async"></li><li class="vslide" hidden><img src="assets/volunteer/paper_page_7.webp" alt="Studying the Leprosy Crisis in India, page 7 of 9" width="760" height="1073" loading="lazy" decoding="async"></li><li class="vslide" hidden><img src="assets/volunteer/paper_page_8.webp" alt="Studying the Leprosy Crisis in India, page 8 of 9" width="760" height="1073" loading="lazy" decoding="async"></li><li class="vslide" hidden><img src="assets/volunteer/paper_page_9.webp" alt="Studying the Leprosy Crisis in India, page 9 of 9" width="760" height="1073" loading="lazy" decoding="async"></li></ul></div>
+          <div class="slide-ctrl">
+            <button type="button" class="track-btn vslide-prev" aria-label="Previous page">←</button>
+            <span class="vslide-count" aria-live="polite">1 / 9</span>
+            <button type="button" class="track-btn vslide-next" aria-label="Next page">→</button>
+          </div>
         </div>
       </div>
     </div>
@@ -2666,6 +2659,29 @@ const WALL_NOTES = [
   dlg.addEventListener("close", () => { videos.forEach(v => v.pause()); clearInterval(flipTimer); });
   dlg.addEventListener("tabchange", sync);
   reduce.addEventListener("change", sync);
+})();
+</script>
+
+<script>
+/* ═══ Volunteer: research paper reader ═══ */
+(() => {
+  const dlg = document.getElementById("dlg-volunteer");
+  if (!dlg) return;
+  const pages = [...dlg.querySelectorAll(".vslide")];
+  const count = dlg.querySelector(".vslide-count");
+  const prev = dlg.querySelector(".vslide-prev"), next = dlg.querySelector(".vslide-next");
+  let cur = 0;
+  const show = i => {
+    cur = Math.max(0, Math.min(pages.length - 1, i));
+    pages.forEach((pg, k) => { pg.hidden = k !== cur; });
+    count.textContent = `${cur + 1} / ${pages.length}`;
+    prev.disabled = cur === 0; next.disabled = cur === pages.length - 1;
+    const n = pages[cur + 1]; if (n) n.querySelector("img").loading = "eager";
+  };
+  prev.addEventListener("click", () => show(cur - 1));
+  next.addEventListener("click", () => show(cur + 1));
+  dlg.querySelector(".reader-page").addEventListener("click", () => show(cur + 1 < pages.length ? cur + 1 : 0));
+  show(0);
 })();
 </script>
 </body>
